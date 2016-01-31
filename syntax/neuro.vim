@@ -11,8 +11,8 @@ syn match neuroOperator     display '+\|-\|/\|*\|='
 
 syn match numeric   display '\<\d\+'
 syn match numeric   display '\<\d\.\d\+f\?'
-syn match cpp_comment   display "//.*$"
-syn region c_comment   start="/\*" end="\*/"
+syn match cpp_comment   display "//.*$" contains=neuroTodo
+syn region c_comment   start="/\*" end="\*/" contains=neuroTodo
 " FIXME: Not entirely sure I can match nested block comments in vim
 " If not, this may be broken but it should work for single depth
 " block comments.
