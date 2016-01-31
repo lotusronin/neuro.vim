@@ -2,7 +2,7 @@
 " Language:     Neuro
 " Maintainer:   Marcus Godwin <godiwn3@gatech.edu>
 
-syn keyword neuroKeyword    fn import return
+syn keyword neuroKeyword    fn import return extern
 syn keyword neuroConditional    if else for while
 syn keyword neuroKeyword    break continue defer
 syn keyword neuroType   int char bool float double void
@@ -20,7 +20,9 @@ syn region c_comment   start="/\*" end="\*/"
 syn match type_body ": *\**  *[a-zA-Z][a-zA-Z0-9_]*"
 
 syn region neuroString start='"' skip='\\"' end='"'
-syn region neuroCharacter start="'" end="'"
+syn region neuroCharacter start="'" skip="\\'" end="'"
+
+syn keyword neuroTodo TODO FIXME NOTE
 
 
 hi def link numeric neuroNumber
@@ -36,3 +38,4 @@ hi def link neuroType Type
 hi def link neuroOperator Operator
 hi def link neuroString String
 hi def link neuroCharacter Character
+hi def link neuroTodo Todo
